@@ -1,16 +1,14 @@
 <template>
-  <div class="404">
-    <h1>There was a problem with your request.</h1>
+  <div class="all-questions">
+    <h1>All questions will be listed here...</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Custom404',
+  name: 'AllQuestions',
   data () {
-    return {
-
-    }
+    return {}
   }
 }
 </script>

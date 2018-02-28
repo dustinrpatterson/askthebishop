@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Ask from '@/components/Ask'
-import custom404 from '@/components/404'
+import Custom404 from '@/components/404'
+import AllQuestions from '@/components/AllQuestions'
 
 Vue.use(Router)
 
@@ -14,9 +15,14 @@ export default new Router({
       component: Ask
     },
     {
+      path: '/allquestions',
+      name: 'AllQuestions',
+      component: AllQuestions
+    },
+    {
       path: '/*',
       name: '404',
-      component: custom404
+      component: Custom404
     }
   ]
 })
