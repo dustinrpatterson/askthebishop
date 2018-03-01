@@ -1,14 +1,50 @@
 <template>
   <div class="all-questions">
-    <h1>All questions will be listed here...</h1>
+    <div class="row">
+      <div class="col">
+        <h1>All questions will be listed here...</h1>
+        <ul>
+          <li v-for="question in questionArray" :key=question.id>{{question.question}}</li>
+        </ul>
+
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import * as firebase from 'firebase'
+
 export default {
   name: 'AllQuestions',
   data () {
-    return {}
+    return {
+      questionArray: []
+    }
+  },
+  created () {
+    this.loadQuestions()
+  },
+  methods: {
+    loadQuestions () {
+      firebase
+        .database()
+        .ref('questions')
+        .once('value')
+        .then(data => {
+          console.log(data)
+          var firebaseQuestion = data.val()
+          for (let key in firebaseQuestion) {
+            this.questionArray.push({
+              id: key,
+              question: firebaseQuestion[key]
+            })
+          }
+        })
+        .catch(data => {
+          console.log(data)
+        })
+    }
   }
 }
 </script>

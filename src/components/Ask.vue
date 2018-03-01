@@ -30,6 +30,7 @@
                                  :max-rows="6">
                 </b-form-textarea>
               </b-form-group>
+              <!-- Disable button if form is empty -->
               <b-button type="submit"
                         variant="primary">Submit</b-button>
             </b-form>
@@ -50,6 +51,8 @@
 </template>
 
 <script>
+import * as firebase from 'firebase'
+
 export default {
   name: 'ask',
   data () {
@@ -61,7 +64,19 @@ export default {
   methods: {
     submitQuestion (e) {
       e.preventDefault()
+      // Check to make sure form is NOT an empty string.
+
       // Submit to firebase here
+      firebase
+        .database()
+        .ref('questions')
+        .push(this.question)
+        .then(data => {
+          console.log(data)
+        })
+        .catch(data => {
+          console.log(data)
+        })
 
       // reset question field
       this.question = ''
