@@ -32,7 +32,7 @@ export default {
     display: block;
     background-image: url("../static/temple.jpg");
     background-size: cover;
-    background-position: center top;
+    background-position: center bottom;
     width: 100%;
     height: 100%;
 
@@ -45,7 +45,7 @@ export default {
 }
 .container {
   background-color: whitesmoke;
-  padding: 20px 0;
+  padding: 20px 15px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 </style>

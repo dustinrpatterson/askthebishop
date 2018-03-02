@@ -1,8 +1,8 @@
 <template>
   <div class="all-questions">
     <div class="row">
-      <div class="col">
-        <h1>All questions will be listed here...</h1>
+      <div class="col-10 ml-auto mr-auto">
+        <h1>Here's what the youth are asking:</h1>
         <ul>
           <li v-for="question in questionArray" :key=question.id>{{question.question}}</li>
         </ul>
