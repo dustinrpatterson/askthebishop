@@ -4,7 +4,8 @@
       <div class="col-10 ml-auto mr-auto">
         <h1>Here's what the youth are asking:</h1>
         <ul>
-          <li v-for="question in questionArray" :key=question.id>{{question.question}}</li>
+          <li v-for="question in questionArray"
+              :key=question.id>{{question.question}}</li>
         </ul>
 
       </div>
@@ -29,20 +30,17 @@ export default {
     loadQuestions () {
       firebase
         .database()
-        .ref('questions')
-        .once('value')
-        .then(data => {
-          console.log(data)
+        .ref()
+        .child('questions')
+        .on('value', data => {
           var firebaseQuestion = data.val()
+          this.questionArray = []
           for (let key in firebaseQuestion) {
             this.questionArray.push({
               id: key,
               question: firebaseQuestion[key]
             })
           }
-        })
-        .catch(data => {
-          console.log(data)
         })
     }
   }

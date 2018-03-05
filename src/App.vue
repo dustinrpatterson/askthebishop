@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="container">
+    <div class="container align-items-center">
       <router-view></router-view>
     </div>
   </div>
@@ -13,6 +13,13 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+  font-family: "Open Sans", sans-serif;
+}
+h1 {
+  font-family: 'Gochi Hand', cursive;
+  font-size: 3.5rem;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,8 +38,8 @@ export default {
 
     display: block;
     background-image: url("../static/temple.jpg");
-    background-size: cover;
     background-position: center bottom;
+    background-size: cover;
     width: 100%;
     height: 100%;
 
