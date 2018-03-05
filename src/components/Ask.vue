@@ -9,7 +9,7 @@
 
     <div class="col-12">
       <div class="text-center">
-        <h1 class="">Q&A fireside with Bishop Wittwer</h1>
+        <h1 class="">Q&A fireside with <br> Bishop Wittwer</h1>
         <p>Has something been on your mind recently? Submit your question below for our special youth fireside on March 11th.</p>
       </div>
     </div>
